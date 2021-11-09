@@ -4,17 +4,29 @@
 <meta charset="utf-8"> 
 <title>Sierra-Miao</title> 
 <style>
-body {color:red;}
-h1 {color:#00ff00;}
-p.ex {color:rgb(0,0,255);}
+body {margin-right:5%;margin-left:5%;}
+h1 {color:#0099ff;}
+p.ex {color:rgb(114, 114, 114);}
 a:link {color:#000000;}      /* 未访问链接*/
 a:visited {color:#00FF00;}  /* 已访问链接 */
 a:hover {color:#FF00FF;}  /* 鼠标移动到链接上 */
 a:active {color:#0000FF;}  /* 鼠标点击时 */
-#table
+p.float   /*浮动标签*/
+{
+    position:fixed;
+    top:30px;
+    right:5px;
+    color:purple;
+    background-color: pink;
+    border-left:6px solid;
+    border-color: purple;
+    padding: 5px;
+}
+
+#table   /*表格*/
 {
 	font-family:"Sans-serif", Arial, Helvetica, sans-serif;
-	width:100%;
+	width:60%;
 	border-collapse:collapse;
 }
 #table td, #table th 
@@ -39,15 +51,36 @@ a:active {color:#0000FF;}  /* 鼠标点击时 */
 	color:#000000;
 	background-color:#EAF2D3;
 }
+p.blue 
+{
+    background-color: #ddffff;
+    padding:14px;
+    border-left:6px solid;
+    border-color: #2196F3;
+}
+div.song {
+    background-color: rgb(255, 255, 177);
+    width: 80%;
+    border: 15px solid green;
+    padding: 25px;
+    margin-left: 10%;
+    margin-right: 10%;
+	text-align:center;
+}
 </style>
 </head>
 
 <body>
-<h1>test</h1>
-<p>test-red</p>
-<p class="ex">test-blue</p>
+<p class="float">Sierra-Miao</p>
+<div class="song">
+<h1>Losing him was blue, like I've never known.</h1>
+<p class="ex">Missing him was dark grey, all alone.</p>
+<p>Forgetting him was like trying to know somebody you never met.</p>
+<p style="color:red">But loving him was red～Oh, red，Burning red～</p>
+</div>
 <p><em><a href="/test.html" target="_blank">Link</a></em></p>
-<table id="table">
+<p class="blue">test-blue-border</p>
+<table id="table" style="margin-left: 20%;margin-right: 20%;">
     <tr>
       <th>test1</th>
       <th>test2</th>
@@ -63,5 +96,6 @@ a:active {color:#0000FF;}  /* 鼠标点击时 */
     <td>金星伴月</td>
     <td>我和你</td>
     </tr>
+
 </body>
 </html>

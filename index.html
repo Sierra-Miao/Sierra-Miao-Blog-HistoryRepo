@@ -3,183 +3,149 @@
 <head>
 <meta charset="utf-8"> 
 <title>主页~Sierra-Miao</title> 
-<link rel="stylesheet" type="text/css" href="guide.css">
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-h1 {color:#0099ff;}
-p.ex {color:rgb(114, 114, 114);}
-a.test:link {color:#000000;}      /* 未访问链接*/
-a.test:visited {color:#00FF00;}  /* 已访问链接 */
-a.test:hover {color:#FF00FF;}  /* 鼠标移动到链接上 */
-a.test:active {color:#0000FF;}  /* 鼠标点击时 */
-
-#table   /*表格*/
-{
-	font-family:'Sans-serif', Arial, Helvetica, sans-serif;
-	width:60%;
-	border-collapse:collapse;
-}
-#table td, #table th 
-{
-	font-size:1em;
-    color:#000000;
-	border:1px solid #98bf21;
-	padding:3px 7px 2px 7px;
-}
-#table th 
-{
-	font-size:1.1em;
-    color:#000000;
-	text-align:left;
-	padding-top:5px;
-	padding-bottom:4px;
-	background-color:#A7C942;
-	color:#ffffff;
-}
-#table tr.alt td 
-{
-	color:#000000;
-	background-color:#EAF2D3;
+:root {
+  font-size: 15px;
 }
 
-p.blue 
-{
-    background-color: #ddffff;
-    padding:14px;
-    border-left:6px solid;
-    border-color: #2196F3;
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-color: #e493d0;
+  background-image: 
+    radial-gradient(closest-side, rgba(235, 105, 78, 1), rgba(235, 105, 78, 0)),
+    radial-gradient(closest-side, rgba(243, 11, 164, 1), rgba(243, 11, 164, 0)),
+    radial-gradient(closest-side, rgba(254, 234, 131, 1), rgba(254, 234, 131, 0)),
+    radial-gradient(closest-side, rgba(170, 142, 245, 1), rgba(170, 142, 245, 0)),
+    radial-gradient(closest-side, rgba(248, 192, 147, 1), rgba(248, 192, 147, 0));
+  background-size: 
+    130vmax 130vmax,
+    80vmax 80vmax,
+    90vmax 90vmax,
+    110vmax 110vmax,
+    90vmax 90vmax;
+  background-position:
+    -80vmax -80vmax,
+    60vmax -30vmax,
+    10vmax 10vmax,
+    -30vmax -10vmax,
+    50vmax 50vmax;
+  background-repeat: no-repeat;
+  animation: 10s movement linear infinite;
 }
-div.song {
-    background-color: rgb(255, 255, 177);
-    width: 80%;
-    border: 15px solid green;
-    padding: 25px;
-    margin-left: 10%;
-    margin-right: 10%;
-	text-align:center;
+
+body::after {
+  content: '';
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
-div.scroll {
-    background-color: rgba(223, 255, 160, 0.404);
-    width: 60%;
-    height: 300px;
-    margin-left: 20%;
-    margin-right: 20%;
-    text-align:center;
-    border: 1px dotted grey;
-    overflow: scroll;
-    font-size: 25px;
-    line-height: 1.5em;
-    font-family: 'Sans-serif', Arial, Helvetica, sans-serif;
+div {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+span {
+  font-size: 5.5rem;
+  color: transparent;
+  text-shadow:
+    0px 0px 1px rgba(255, 255, 255, .6),
+    0px 4px 4px rgba(0, 0, 0, .05);
+  letter-spacing: .2rem;
+}
+a {
+  font-size: 2.6rem;
+  color: transparent;
+  text-shadow:
+    0px 0px 1px rgba(255, 255, 255, .6),
+    0px 4px 4px rgba(0, 0, 0, .05);
+  letter-spacing: .2rem;
+  text-decoration: none;
+}
+a:hover {
+    opacity: 0.5;
+}
+
+@keyframes movement {
+  0%, 100% {
+    background-size: 
+      130vmax 130vmax,
+      80vmax 80vmax,
+      90vmax 90vmax,
+      110vmax 110vmax,
+      90vmax 90vmax;
+    background-position:
+      -80vmax -80vmax,
+      60vmax -30vmax,
+      10vmax 10vmax,
+      -30vmax -10vmax,
+      50vmax 50vmax;
+  }
+  25% {
+    background-size: 
+      100vmax 100vmax,
+      90vmax 90vmax,
+      100vmax 100vmax,
+      90vmax 90vmax,
+      60vmax 60vmax;
+    background-position:
+      -60vmax -90vmax,
+      50vmax -40vmax,
+      0vmax -20vmax,
+      -40vmax -20vmax,
+      40vmax 60vmax;
+  }
+  50% {
+    background-size: 
+      80vmax 80vmax,
+      110vmax 110vmax,
+      80vmax 80vmax,
+      60vmax 60vmax,
+      80vmax 80vmax;
+    background-position:
+      -50vmax -70vmax,
+      40vmax -30vmax,
+      10vmax 0vmax,
+      20vmax 10vmax,
+      30vmax 70vmax;
+  }
+  75% {
+    background-size: 
+      90vmax 90vmax,
+      90vmax 90vmax,
+      100vmax 100vmax,
+      90vmax 90vmax,
+      70vmax 70vmax;
+    background-position:
+      -50vmax -40vmax,
+      50vmax -30vmax,
+      20vmax 0vmax,
+      -10vmax 10vmax,
+      40vmax 60vmax;
+  }
 }
 </style>
 </head>
-
 <body>
-    <pre>
+    <div>
+        <span>Sierra-Miao</span>
+        <pre>
 
-
-    </pre>
-    <ul class="guide">
-        <li><a class="active" href="index.html">主页</a></li>
-        <li><a href="dogfood.html">狗粮</a></li>
-        <li><a href="index.html">未完待续</a></li>
-    </ul>
-    <p class="float">Sierra-Miao</p>
-    <div class="song">
-    <h1>Losing him was blue, like I've never known.</h1>
-    <p class="ex">Missing him was dark grey, all alone.</p>
-    <p>Forgetting him was like trying to know somebody you never met.</p>
-    <p style="color:red">But loving him was red～Oh, red，Burning red～</p>
+        </pre>
+        <a href="blog-index.html">进入博客</a>
+        <a href="dogfood.html">狗粮篇</a>
     </div>
-    <div class="scroll">
-    <pre>
-    当你的天空突然下起了大雨
-    那是我在为你炸乌云
-    当你的发丝微乱有阵风吹过
-    那是我在远处想念你
-    你还在忙吗
-    还是在摸鱼
-    我看看 哇 好大一条
-    那个 摸完能不能借我炸一下
-    嘿嘿嘿
-    看起来你怎么不开心
-    虽然不知道发生了什么
-    吃饱了再去想吧
-    这东西 能吃吗
-    烦恼都走开 烦恼都走开
-    加班都走开 加班都走开
-    倒霉都走开 倒霉都走开
-    坏人都走开 坏人都走开
-    尴尬都走开 尴尬都走开
-    史莱姆走开 史莱姆走开
-    当你的天空突然下起了大雨
-    那是我在为你炸乌云
-    当你的发丝微乱有阵风吹过
-    那是我在远处想念你
-    哦 轮到我了
-    你在忙吗
-    还是在摸鱼
-    我看看 哇 好大一条
-    那个 摸完能不能借她炸一下
-    嘿嘿嘿 哎 唱不完了……
-    (看起来你怎么不开心
-    虽然不知道发生了什么
-    吃饱了再去想吧)
-    不见万家灯火
-    尽斩世间妖魔
-    如此一切只为苍生不要想太多
-    平凡的起起落落
-    漂浮的因果对错
-    都可以向风诉说
-    当前面太多阻碍看不到对岸
-    请替我保密我为你炸平
-    虽然我讨厌热热乎乎的东西
-    我却想要拥抱你 可以吗
-    (吟唱～)
-    如果你迷恋岁月舍不得向前
-    我就默默记录这诗篇
-    如果你厌倦引力想要去飞行
-    我就让 全世界的风吹向你
-    当你的天空突然下起了大雨
-    那是我在为你炸乌云
-    当你的发丝微乱有阵风吹过
-    那是我在远处想念你
-    啦啦啦～
-    </pre>
-    </div>
-    <p><em><a class="test" href="index.html" target="_blank">Link</a></em></p>
-    <p class="blue">test-blue-border</p>
-    <table id="table" style="margin-left: 20%;margin-right: 20%;">
-        <tr>
-        <th>璃月3C</th>
-        <th>胡桃</th>
-        <th>魈</th>
-        <th>甘雨</th>
-        </tr>
-        <tr>
-        <td>生命值</td>
-        <td>15552</td>
-        <td>12376</td>
-        <td>9797</td>
-        </tr>
-        <tr class="alt">
-        <td>突破加成</td>
-        <td>暴击伤害</td>
-        <td>暴击率</td>
-        <td>暴击伤害</td>
-        </tr>
-        <tr>
-        <td>建议圣遗物</td>
-        <td>魔女四件套</td>
-        <td>二风二角斗士/追忆</td>
-        <td>四冰套/乐团套</td>
-        </tr>
-        <tr class="alt">
-        <td>建议武器</td>
-        <td>护魔之杖</td>
-        <td>和璞鸢/护魔之杖</td>
-        <td>阿莫斯之弓/冬极白星</td>
-        </tr>
-    </table>
 </body>
-</html>

@@ -99,7 +99,7 @@ guidebox1.component('othersindex1', {
   </ul>
 `
 })
-guidebox1.mount('#guidebox1')
+guidebox1.mount('#guidebox1');
 (function flexible (window, document) {
    var docEl = document.documentElement
    var dpr = window.devicePixelRatio || 1

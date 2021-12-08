@@ -26,7 +26,7 @@ guidebox.component('allindex', {
   </ul>
 `
 })
-guidebox.component('c_c++index', {
+guidebox.component('cindex', {
   template: `
   <ul class="mdui-list list">
   <li onclick="setTimeout(function(){window.location.href='blog-index.html'},250);" class="mdui-list-item mdui-ripple">All</li>
@@ -57,3 +57,46 @@ guidebox.component('othersindex', {
 `
 })
 guidebox.mount('#guidebox')
+
+const guidebox1 = Vue.createApp({})
+guidebox1.component('allindex1', {
+  template: `
+  <ul class="mdui-list list">
+  <li onclick="setTimeout(function(){window.location.href='../blog-index.html'},250);" class="mdui-list-item mdui-list-item-active mdui-ripple">All</li>
+  <li onclick="setTimeout(function(){window.location.href='../blog-C_C++.html'},250);" class="mdui-list-item mdui-ripple">C/C++</li>
+  <li onclick="setTimeout(function(){window.location.href='../blog-HCJ.html'},250);" class="mdui-list-item mdui-ripple">HTML/CSS/JavaScript</li>
+  <li onclick="setTimeout(function(){window.location.href='../blog-Others.html'},250);" class="mdui-list-item mdui-ripple">Others</li>
+  </ul>
+`
+})
+guidebox1.component('cindex1', {
+  template: `
+  <ul class="mdui-list background-pink">
+  <li onclick="setTimeout(function(){window.location.href='../blog-index.html'},250);" class="mdui-list-item mdui-ripple">All</li>
+  <li onclick="setTimeout(function(){window.location.href='../blog-C_C++.html'},250);" class="mdui-list-item mdui-list-item-active mdui-ripple">C/C++</li>
+  <li onclick="setTimeout(function(){window.location.href='../blog-HCJ.html'},250);" class="mdui-list-item mdui-ripple">HTML/CSS/JavaScript</li>
+  <li onclick="setTimeout(function(){window.location.href='../blog-Others.html'},250);" class="mdui-list-item mdui-ripple">Others</li>
+  </ul>
+`
+})
+guidebox1.component('hcjindex1', {
+  template: `
+  <ul class="mdui-list list">
+  <li onclick="setTimeout(function(){window.location.href='../blog-index.html'},250);" class="mdui-list-item mdui-ripple">All</li>
+  <li onclick="setTimeout(function(){window.location.href='../blog-C_C++.html'},250);" class="mdui-list-item mdui-ripple">C/C++</li>
+  <li onclick="setTimeout(function(){window.location.href='../blog-HCJ.html'},250);" class="mdui-list-item mdui-list-item-active mdui-ripple">HTML/CSS/JavaScript</li>
+  <li onclick="setTimeout(function(){window.location.href='../blog-Others.html'},250);" class="mdui-list-item mdui-ripple">Others</li>
+  </ul>
+`
+})
+guidebox1.component('othersindex1', {
+  template: `
+  <ul class="mdui-list list">
+  <li onclick="setTimeout(function(){window.location.href='../blog-index.html'},250);" class="mdui-list-item mdui-ripple">All</li>
+  <li onclick="setTimeout(function(){window.location.href='../blog-C_C++.html'},250);" class="mdui-list-item mdui-ripple">C/C++</li>
+  <li onclick="setTimeout(function(){window.location.href='../blog-HCJ.html'},250);" class="mdui-list-item mdui-ripple">HTML/CSS/JavaScript</li>
+  <li onclick="setTimeout(function(){window.location.href='../blog-Others.html'},250);" class="mdui-list-item mdui-list-item-active mdui-ripple">Others</li>
+  </ul>
+`
+})
+guidebox1.mount('#guidebox1')

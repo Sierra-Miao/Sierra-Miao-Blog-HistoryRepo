@@ -30,7 +30,8 @@ toolbar.component('toolbar',{
                   <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
                 </div>
                 <div class="mdui-collapse-item-body mdui-list">
-                  <a href="../dogfood-index.html" class="mdui-list-item mdui-ripple">总览</a>
+                  <a href="../dogfood-daily.html" class="mdui-list-item mdui-ripple">小日常</a>
+                  <a href="../dogfood-ps.html" class="mdui-list-item mdui-ripple">一起修过的图</a>
                   <a href="#" class="mdui-list-item mdui-ripple">番外篇</a>
                 </div>
             </div>

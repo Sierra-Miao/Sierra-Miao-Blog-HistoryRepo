@@ -248,7 +248,7 @@ let cardData = [
 ]
 
 let cardMain = document.querySelector('.container');//容器
-let pagination =  document.querySelector('.pagination');//分页容器
+let pagination = document.querySelector('.pagination');//分页容器
 let pageCount = Math.ceil(cardData.length/12); //根据数据的长度计算总共几页
 let cardDataRender = [];//每页要显示的数据
 let p = 1;//根据p值显示每页的数据

@@ -71,7 +71,7 @@ let render = ()=>{
        cardMain.innerHTML += ` 
        <div class="mdui-card card">
             <div class="mdui-card-media">
-                <img class="card_img" src="${item.img}">
+                <a href="${item.img}"><img class="card_img" src="${item.img}"></a>
             </div>
             <div onclick="setTimeout(function(){window.location.href='${item.href}'},250);" class="mdui-card-primary mdui-ripple card_title" style="background-color: rgba(253, 188, 199,0.5);">
                 <div class="mdui-card-primary-title">${item.title}</div>

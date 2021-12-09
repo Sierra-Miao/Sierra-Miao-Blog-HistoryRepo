@@ -1,0 +1,23 @@
+.pagination-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.pagination{
+    display: flex;
+    flex-direction: row;
+}
+.page-change{
+    margin: 0 15px;
+    cursor:pointer;
+}
+.skip{
+    width: 50px;
+}
+.prev {
+    text-align: center;
+}
+.next {
+    text-align: center;
+}

@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <meta charset="utf-8"> 
-<title>狗粮~Sierra-Miao</title> 
+<title>狗粮篇~Sierra-Miao</title> 
+<link rel="stylesheet" type="text/css" href="./css/card_small.css" id="card"> 
 <link rel="stylesheet" type="text/css" href="./css/miao.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/css/mdui.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/pagination.css">
+<script src="./js/card.js"></script>
 <style>
 
 </style>
 </head>
-
-<body>
-    <div class="navigation_bar" id="bar"><dogfoodbar></dogfoodbar></div>
+<body class="mdui-drawer-body-left  mdui-appbar-with-toolbar">
+    <div id="toolbar"><toolbar title="Dog Food"></toolbar></div>
+    <div class="big-container">
+        <div class="container"></div>
+        <div class="pagination-container">
+            <span class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-pink-accent prev" style="margin:4px;">上一页</span>
+            <div class="pagination"></div>
+            <span class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-pink-accent next" style="margin:4px;">下一页</span>
+        </div>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/js/mdui.min.js"></script>
 <script src="https://unpkg.com/vue@3.2.24/dist/vue.global.js"></script>
 <script src="./js/miao.js"></script>
+<script src="./js/toolbar_root.js"></script>
+<script src="./js/dogfood_pagination.js"></script>
 </html>

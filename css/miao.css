@@ -11,11 +11,11 @@ body {
 .background-pink {
   background-color: #e493d0;
   background-image: 
-    radial-gradient(closest-side, rgba(235, 105, 78, 1), rgba(235, 105, 78, 0)),
-    radial-gradient(closest-side, rgba(243, 11, 164, 1), rgba(243, 11, 164, 0)),
-    radial-gradient(closest-side, rgba(254, 234, 131, 1), rgba(254, 234, 131, 0)),
-    radial-gradient(closest-side, rgba(170, 142, 245, 1), rgba(170, 142, 245, 0)),
-    radial-gradient(closest-side, rgba(248, 192, 147, 1), rgba(248, 192, 147, 0));
+    radial-gradient(farthest-side, rgba(235, 105, 78, 1), rgba(235, 105, 78, 0)),
+    radial-gradient(farthest-side, rgba(243, 11, 164, 1), rgba(243, 11, 164, 0)),
+    radial-gradient(farthest-side, rgba(254, 234, 131, 1), rgba(254, 234, 131, 0)),
+    radial-gradient(farthest-side, rgba(170, 142, 245, 1), rgba(170, 142, 245, 0)),
+    radial-gradient(farthest-side, rgba(248, 192, 147, 1), rgba(248, 192, 147, 0));
   background-size: 
     130vmax 130vmax,
     80vmax 80vmax,
@@ -28,8 +28,6 @@ body {
     10vmax 10vmax,
     -30vmax -10vmax,
     50vmax 50vmax;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
   animation: 7s movement linear infinite;
   color: white;
   font-family: 'Quicksand', sans-serif;
@@ -161,11 +159,11 @@ body {
   color: white;
   background-color: #e493d0;
     background-image: 
-      radial-gradient(closest-side, rgba(235, 105, 78, 1), rgba(235, 105, 78, 0)),
-      radial-gradient(closest-side, rgba(243, 11, 164, 1), rgba(243, 11, 164, 0)),
-      radial-gradient(closest-side, rgba(254, 234, 131, 1), rgba(254, 234, 131, 0)),
-      radial-gradient(closest-side, rgba(170, 142, 245, 1), rgba(170, 142, 245, 0)),
-      radial-gradient(closest-side, rgba(248, 192, 147, 1), rgba(248, 192, 147, 0));
+      radial-gradient(farthest-side, rgba(235, 105, 78, 1), rgba(235, 105, 78, 0)),
+      radial-gradient(farthest-side, rgba(243, 11, 164, 1), rgba(243, 11, 164, 0)),
+      radial-gradient(farthest-side, rgba(254, 234, 131, 1), rgba(254, 234, 131, 0)),
+      radial-gradient(farthest-side, rgba(170, 142, 245, 1), rgba(170, 142, 245, 0)),
+      radial-gradient(farthest-side, rgba(248, 192, 147, 1), rgba(248, 192, 147, 0));
     background-size: 
       130vmax 130vmax,
       80vmax 80vmax,

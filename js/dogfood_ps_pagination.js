@@ -1,6 +1,6 @@
 let cardData = [
     {
-        img:"./dogfood/img/ps/jpg",
+        img:"./dogfood/img/ps/3.jpg",
         href:"#",
         title:"虾滑滑的最新论证",
         date:"2021.12.10",

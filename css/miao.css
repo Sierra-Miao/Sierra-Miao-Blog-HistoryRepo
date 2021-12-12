@@ -129,7 +129,7 @@ body {
   margin: auto;
   padding-left: 10%;
   padding-right: 10%;
-  background-color: rgba(255, 192, 203,0);
+  background-color: rgba(255, 192, 203,0.5);
   font-size: 15px;
   line-height: 1.5;
   min-height: 100%;

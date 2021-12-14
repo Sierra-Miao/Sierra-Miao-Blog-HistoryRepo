@@ -31,6 +31,7 @@ let render = ()=>{
             </div>
             <div onclick="setTimeout(function(){window.location.href='${item.href}'},250);" class="mdui-card-primary mdui-ripple card_title" style="background-color: rgba(253, 188, 199,0.5);">
                 <div class="mdui-card-primary-title">${item.title}</div>
+                <div class="mdui-card-primary-subtitle">${item.date}</div>
                 <div class="mdui-card-content">${item.content}</div>
             </div>
         </div>

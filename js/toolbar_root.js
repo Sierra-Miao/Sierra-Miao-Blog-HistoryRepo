@@ -9,6 +9,10 @@ toolbar.component('toolbar',{
         <span class="mdui-typo-title">Sierra-Miao</span>
         </a>
         <span class="mdui-typo-title">{{ title }}</span>
+        <div class="mdui-toolbar-spacer"></div>
+        <a href="./search_blog.html" class="mdui-textfield-icon mdui-btn mdui-btn-icon">
+          <i class="mdui-icon material-icons">search</i>
+        </a>
       </div>
       <div class="mdui-drawer background-pink" style="margin-top: -8px;" id="main-drawer">
         <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">

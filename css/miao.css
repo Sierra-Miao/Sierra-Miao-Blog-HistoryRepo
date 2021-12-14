@@ -118,7 +118,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  z-index: -1;
+  z-index: -100000;
   top: 50px;
   min-width: 50%;
   margin: 20px auto;
@@ -130,6 +130,7 @@ body {
 }
 .container {
   display: flex;
+  z-index: -100000;
   flex-wrap: wrap;
   align-items: center;
   font-family: 'Quicksand', sans-serif;

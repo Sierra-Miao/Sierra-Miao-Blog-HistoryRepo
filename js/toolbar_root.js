@@ -2,14 +2,14 @@ const toolbar = Vue.createApp({})
 toolbar.component('toolbar',{
     props:['title'],
     template:`
-    <div class="mdui-toolbar background-pink mdui-appbar-fixed mdui-shadow-0">
+    <div class="mdui-toolbar background-pink mdui-appbar-fixed mdui-shadow-0" style="z-index:1;">
         <a href="javascript:;" class="mdui-btn mdui-btn-icon">
             <i mdui-drawer="{target: '#main-drawer'}" class="mdui-icon material-icons">menu</i></button>
         </a><a href="./index.html">
         <span class="mdui-typo-title">Sierra-Miao</span>
         </a>
         <span class="mdui-typo-title">{{ title }}</span>
-        <div class="mdui-toolbar-spacer"></div>
+        <div class="mdui-toolbar-spacer" style="z-index:1;"></div>
         <a href="./search_blog.html" class="mdui-textfield-icon mdui-btn mdui-btn-icon">
           <i class="mdui-icon material-icons">search</i>
         </a>

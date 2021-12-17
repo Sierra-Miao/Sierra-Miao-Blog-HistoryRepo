@@ -5,12 +5,12 @@ toolbar.component('toolbar',{
     <div class="mdui-toolbar background-pink mdui-appbar-fixed mdui-shadow-0">
         <a href="javascript:;" class="mdui-btn mdui-btn-icon">
             <i mdui-drawer="{target: '#main-drawer'}" class="mdui-icon material-icons">menu</i></button>
-        </a><a href="../index.html">
+        </a><a href="../../index.html">
         <span class="mdui-typo-title">Sierra-Miao</span>
         </a>
         <span class="mdui-typo-title">{{ title }}</span>
         <div class="mdui-toolbar-spacer"></div>
-        <a href="../search_blog.html" class="mdui-textfield-icon mdui-btn mdui-btn-icon">
+        <a href="../../search_blog.html" class="mdui-textfield-icon mdui-btn mdui-btn-icon">
           <i class="mdui-icon material-icons">search</i>
         </a>
       </div>
@@ -22,10 +22,10 @@ toolbar.component('toolbar',{
                   <i class="mdui-collapse-item-arrow mdui-icon mdui-ripple material-icons">keyboard_arrow_down</i>
                 </div>
                 <div class="mdui-collapse-item-body mdui-list">
-                  <a href="../blog-index.html" class="mdui-list-item mdui-ripple">All</a>
-                  <a href="../blog-C_C++.html" class="mdui-list-item mdui-ripple">C/C++</a>
-                  <a href="../blog-HCJ.html" class="mdui-list-item mdui-ripple">HTML/CSS/JavaScript</a>
-                  <a href="../blog-Others.html" class="mdui-list-item mdui-ripple">Others</a>
+                  <a href="../../blog-index.html" class="mdui-list-item mdui-ripple">All</a>
+                  <a href="../../blog-C_C++.html" class="mdui-list-item mdui-ripple">C/C++</a>
+                  <a href="../../blog-HCJ.html" class="mdui-list-item mdui-ripple">HTML/CSS/JavaScript</a>
+                  <a href="../../blog-Others.html" class="mdui-list-item mdui-ripple">Others</a>
                 </div>
             </div>
             <div class="mdui-collapse-item">
@@ -34,9 +34,9 @@ toolbar.component('toolbar',{
                   <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
                 </div>
                 <div class="mdui-collapse-item-body mdui-list">
-                  <a href="../dogfood-daily.html" class="mdui-list-item mdui-ripple">小日常</a>
-                  <a href="../dogfood-ps.html" class="mdui-list-item mdui-ripple">奇奇怪怪的的图</a>
-                  <a href="../dogfood-novel.html" class="mdui-list-item mdui-ripple">番外篇</a>
+                  <a href="../../dogfood-daily.html" class="mdui-list-item mdui-ripple">小日常</a>
+                  <a href="../../dogfood-ps.html" class="mdui-list-item mdui-ripple">奇奇怪怪的的图</a>
+                  <a href="../../dogfood-novel.html" class="mdui-list-item mdui-ripple">番外篇</a>
                 </div>
             </div>
         </div>

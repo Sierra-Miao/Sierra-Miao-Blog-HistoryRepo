@@ -139,7 +139,6 @@ body {
 .article-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-family: 'Quicksand', sans-serif;
   position: absolute;
   z-index: -1;
@@ -158,7 +157,7 @@ body {
 }
 .article-container p {
   text-indent: 2em;
-  margin: 0.8em auto;
+  margin: 0.8em 0;
 }
 .article-container code {
   font-family: Consolas, sans-serif;

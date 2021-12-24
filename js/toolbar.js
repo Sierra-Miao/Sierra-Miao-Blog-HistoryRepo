@@ -37,6 +37,7 @@ toolbar.component('toolbar',{
                   <a href="../dogfood-daily.html" class="mdui-list-item mdui-ripple">小日常</a>
                   <a href="../dogfood-ps.html" class="mdui-list-item mdui-ripple">奇奇怪怪的的图</a>
                   <a href="../dogfood-novel.html" class="mdui-list-item mdui-ripple">番外篇</a>
+                  <a href="../dogfood-huabook.html" class="mdui-list-item mdui-ripple">滑滑乱翻书</a>
                 </div>
             </div>
         </div>

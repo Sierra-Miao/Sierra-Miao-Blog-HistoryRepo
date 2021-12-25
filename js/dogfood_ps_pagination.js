@@ -3,6 +3,13 @@ var number = now.getYear().toString()+now.getMonth().toString()+now.getDate().to
 document.write("\<script language=\"javascript\" type=\"text/javascript\" src=\"js/YearReportLuRu.js?"+number+"\"><\/script\>");
 let cardData = [
     {
+        img:"./dogfood/img/ps/11.png",
+        href:"#",
+        title:"平安夜快乐！",
+        date:"2021.12.24",
+        content:"晚上，起飞悄悄行动起来。好耶得到了梦寐以求的圣诞帽，可高兴了。滑滑和公鸭赶制了一副画，画里纪念了好耶和起飞的一次逃亡。摆烂家族新增一员，他叫华子，有大眼睛，黄色的尖嘴巴，红色的小翅膀。"
+    },
+    {
         img:"./dogfood/img/ps/10.png",
         href:"#",
         title:"起飞给你们送来圣诞礼物啦！",

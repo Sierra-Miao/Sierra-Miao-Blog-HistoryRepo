@@ -3,6 +3,13 @@ var number = now.getYear().toString()+now.getMonth().toString()+now.getDate().to
 document.write("\<script language=\"javascript\" type=\"text/javascript\" src=\"js/YearReportLuRu.js?"+number+"\"><\/script\>");
 let cardData = [
     {
+        img:"./dogfood/img/daily/11.jpg",
+        href:"#",
+        title:"嘿嘿，是米奇！",
+        date:"2021.12.26",
+        content:"滑滑买了高中一直想要的米奇纪念礼盒，然后我们一起把赠品的立体米奇拼起来了~"
+    },
+    {
         img:"./dogfood/img/daily/10.jpg",
         href:"#",
         title:"圣诞节冰龙餐厅初体验",

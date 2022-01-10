@@ -23,7 +23,7 @@
             </a>
             <span class="mdui-typo-title">番外篇</span>
             <div class="mdui-toolbar-spacer" style="z-index:1;"></div>
-            <i class="mdui-icon material-icons" mdui-dialog="{target: '#advertisement'}" id="ad">priority_high</i>
+            <a mdui-dialog="{target: '#advertisement'}" id="ad">公告</a>
             <a href="./search_blog.html" class="mdui-textfield-icon mdui-btn mdui-btn-icon">
               <i class="mdui-icon material-icons">search</i>
             </a>
@@ -90,7 +90,7 @@
                     <br/>
                 </div>
                 <div class="mdui-dialog-actions">
-                  <button class="mdui-btn mdui-ripple" mdui-dialog-close>好！</button>
+                  <button class="mdui-btn mdui-ripple" mdui-dialog-cancel>好！</button>
                 </div>
             </div>
 </body>
@@ -100,7 +100,4 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="./js/toolbar_root.js"></script>
 <script src="./js/dogfood_novel_pagination.js"></script>
-<script>
-    window.onload=function(){$('#ad').trigger('click');}
-</script>
 </html>

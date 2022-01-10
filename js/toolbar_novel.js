@@ -10,7 +10,7 @@ toolbar.component('toolbar',{
         </a>
         <span class="mdui-typo-title">{{ title }}</span>
         <div class="mdui-toolbar-spacer"></div>
-        <i class="mdui-icon material-icons" mdui-dialog="{target: '#advertisement'}" id="ad">priority_high</i>
+        <a mdui-dialog="{target: '#advertisement'}" id="ad">公告</a>
         <a href="../../search_blog.html" class="mdui-textfield-icon mdui-btn mdui-btn-icon">
           <i class="mdui-icon material-icons">search</i>
         </a>

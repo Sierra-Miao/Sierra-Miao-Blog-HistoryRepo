@@ -5,8 +5,6 @@ toolbar.component('toolbar',{
     <div class="mdui-toolbar background-pink mdui-appbar-fixed mdui-shadow-0">
         <a href="javascript:;" class="mdui-btn mdui-btn-icon">
             <i mdui-drawer="{target: '#main-drawer'}" class="mdui-icon material-icons">menu</i></button>
-        </a><a href="../index.html">
-        <span class="mdui-typo-title">Sierra-Miao</span>
         </a>
         <span class="mdui-typo-title">{{ title }}</span>
         <div class="mdui-toolbar-spacer"></div>

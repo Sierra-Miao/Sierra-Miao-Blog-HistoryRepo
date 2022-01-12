@@ -1,6 +1,3 @@
-var now=new Date();
-var number = now.getYear().toString()+now.getMonth().toString()+now.getDate().toString()+now.getHours().toString()+now.getMinutes().toString()+now.getSeconds().toString();
-document.write("\<script language=\"javascript\" type=\"text/javascript\" src=\"js/YearReportLuRu.js?"+number+"\"><\/script\>");
 let cardData = [
     {
         href:"./dogfood/novel/0.html",
@@ -63,10 +60,16 @@ let cardData = [
         content:"“砰”的一声，三兄弟平稳落地，他们肚子里的二氧化碳也排得七七八八……"
     },
     {
-        href:"./doogfood/novel/10.html",
+        href:"./dogfood/novel/10.html",
         title:"十一、伟大的进军",
         date:"2022.1",
         content:"地下为什么会有猴子？三兄弟可好奇了，决定去底下看看……"
+    },
+    {
+        href:"./dogfood/novel/11.html",
+        title:"十二、唐纳德长寿的秘密",
+        date:"2022.1",
+        content:"“嘎嘎，吃完这一顿，我又可以多活好几个鸭生了！”说这句话的，正是鸭王唐纳德……"
     }
 ]
 

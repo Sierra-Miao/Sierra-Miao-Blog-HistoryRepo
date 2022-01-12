@@ -1,7 +1,25 @@
-var now=new Date();
-var number = now.getYear().toString()+now.getMonth().toString()+now.getDate().toString()+now.getHours().toString()+now.getMinutes().toString()+now.getSeconds().toString();
-document.write("\<script language=\"javascript\" type=\"text/javascript\" src=\"js/YearReportLuRu.js?"+number+"\"><\/script\>");
 let cardData = [
+    {
+        img:"./dogfood/img/daily/14.png",
+        href:"#",
+        title:"一起大半夜看恐怖漫画咯",
+        date:"2022.1.12",
+        content:"漩涡，漩涡，漩涡，脑子里全是漩涡……滑滑早已害怕到把视频静音去听喜庆的歌，而鸭再怕也一直开着声音~感谢陪伴~"
+    },
+    {
+        img:"./dogfood/img/daily/13.png",
+        href:"#",
+        title:"回家前的学期小总结",
+        date:"2022.1.8",
+        content:"能遇见彼此就是最大的幸运呢"
+    },
+    {
+        img:"./dogfood/img/daily/12.png",
+        href:"#",
+        title:"在飞机烧烤大吃特吃的跨年夜！",
+        date:"2021.12.31",
+        content:"能和你一起球化就是最大的幸福之一噢~"
+    },
     {
         img:"./dogfood/img/daily/11.jpg",
         href:"#",

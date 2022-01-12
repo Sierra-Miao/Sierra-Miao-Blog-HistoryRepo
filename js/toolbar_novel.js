@@ -7,8 +7,8 @@ toolbar.component('toolbar',{
             <i mdui-drawer="{target: '#main-drawer'}" class="mdui-icon material-icons">menu</i></button>
         </a>
         <span class="mdui-typo-title">{{ title }}</span>
+        <a mdui-dialog="{target: '#advertisement'}" id="ad" style="font-weight: bolder;font-size: larger;">这是公告，点我！</a>
         <div class="mdui-toolbar-spacer"></div>
-        <a mdui-dialog="{target: '#advertisement'}" id="ad">公告</a>
         <a href="../../search_blog.html" class="mdui-textfield-icon mdui-btn mdui-btn-icon">
           <i class="mdui-icon material-icons">search</i>
         </a>

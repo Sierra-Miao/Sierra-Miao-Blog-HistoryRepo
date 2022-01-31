@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    background-image: url(./start_background.png);
+    background-repeat: no-repeat;
+    background-size:100vw auto ;
+    background-position-x: center;
+}
+.icon {
+    height: 15vh;
+    width: auto;
+}
+.mask {
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width:100vw;
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}

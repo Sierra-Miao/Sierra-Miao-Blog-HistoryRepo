@@ -28,12 +28,24 @@ function showMask(player,computer,playerResultString,computerResultString){
     setTimeout("$('#mask').hide(500);",2000);
 }
 
-function showWinMask(){
-
-}
-
-function showLoseMask(){
-
+function showResultMask(resultString,imgName){
+    let mask = document.getElementById('mask');
+    mask.innerHTML = `
+    <div class="mdui-card mdui-color-pink-100" style="margin: auto;width:70vw;">
+        <div class="mdui-card-media">
+            <img src="./${imgName}.png"/>
+            <div class="mdui-card-media-covered">
+                <div class="mdui-card-primary">
+                    <div class="mdui-card-primary-subtitle">${resultString}</div>
+                </div>
+            </div>
+        </div>
+        <div class="mdui-card-actions">
+            <button onclick="location.reload();" class="mdui-btn mdui-ripple mdui-color-pink" style="color: white;">点击重开</button>
+        </div>
+    </div>
+    `
+    $('#mask').show(500);
 }
 
 function getResultString(Result){
@@ -57,7 +69,7 @@ start.onclick = function(){
             <div class="mdui-card-media-covered">
                 <div class="mdui-card-primary">
                     <div class="mdui-card-primary-title">好耶</div>
-                    <div class="mdui-card-primary-subtitle">我有三滴血！我可以偷看对面一次噢！</div>
+                    <div class="mdui-card-primary-subtitle">我有五滴血！我可以偷看对面一次噢！</div>
                 </div>
             </div>
         </div>
@@ -71,7 +83,7 @@ start.onclick = function(){
             <div class="mdui-card-media-covered">
                 <div class="mdui-card-primary">
                     <div class="mdui-card-primary-title">起飞</div>
-                    <div class="mdui-card-primary-subtitle">我不能偷看~但是我有五滴血！</div>
+                    <div class="mdui-card-primary-subtitle">我不能偷看~但是我有七滴血！</div>
                 </div>
             </div>
         </div>
@@ -84,6 +96,8 @@ start.onclick = function(){
     var qifei = document.getElementById('qifei');
     var skill_haoye = true;
     haoye.onclick = function(){
+        let chooseHaoyeAudio = new Audio('./chooseHaoye.m4a');
+        chooseHaoyeAudio.play();
         div.innerHTML = `
         <div style="margin-top: 3vh;display: flex;align-items: center;flex-direction: column;">
             <div>
@@ -109,7 +123,7 @@ start.onclick = function(){
                         <img src="./scissors.png"/>
                         <div class="mdui-card-media-covered">
                             <div class="mdui-card-primary">
-                                <div class="mdui-card-primary-title">毒龙剪</div>
+                                <div class=""mdui-card-primary-subtitle">毒龙剪</div>
                             </div>
                         </div>
                     </div>
@@ -119,7 +133,7 @@ start.onclick = function(){
                         <img src="./rock.png"/>
                         <div class="mdui-card-media-covered">
                             <div class="mdui-card-primary">
-                                <div class="mdui-card-primary-title">重拳</div>
+                                <div class=""mdui-card-primary-subtitle">重拳</div>
                             </div>
                         </div>
                     </div>
@@ -129,7 +143,7 @@ start.onclick = function(){
                         <img src="./paper.png"/>
                         <div class="mdui-card-media-covered">
                             <div class="mdui-card-primary">
-                                <div class="mdui-card-primary-title">如来神掌</div>
+                                <div class=""mdui-card-primary-subtitle">如来神掌</div>
                             </div>
                         </div>
                     </div>
@@ -152,8 +166,8 @@ start.onclick = function(){
 
         </div>
         `
-        var playerHP = 3;
-        var computerHP = 5;
+        var playerHP = 5;
+        var computerHP = 7;
         printHP(playerHP,computerHP);
 
         let computerResult = Math.floor(Math.random()*3);
@@ -161,6 +175,19 @@ start.onclick = function(){
         let rock = document.getElementById('rock');
         let paper = document.getElementById('paper');
         let toukan = document.getElementById('toukan');
+
+        function haoyeResult(){
+            if(playerHP == 0){
+                let dieAudio = new Audio('./die.m4a');
+                dieAudio.play();
+                showResultMask(`好耶寄了!`,`haoye`);
+            }
+            if(computerHP == 0){
+                let haoyeWinAudio = new Audio('./haoyeWin.m4a');
+                haoyeWinAudio.play();
+                showResultMask(`好耶赢了!恭喜获得起飞画像一张!`,`qifeiImg`);
+            }
+        }
 
         toukan.onclick = function(){
             let box = document.getElementById('box');
@@ -206,12 +233,7 @@ start.onclick = function(){
             }
 
             printHP(playerHP,computerHP)
-            
-            if(playerHP == 0)
-                showLoseMask();
-            if(computerHP == 0)
-                showWinMask();
-
+            setTimeout(haoyeResult,2500);
             computerResult = Math.floor(Math.random()*3);
         }
 
@@ -243,50 +265,8 @@ start.onclick = function(){
             }
 
             printHP(playerHP,computerHP)
-            
-            if(playerHP == 0)
-                showLoseMask();
-            if(computerHP == 0)
-                showWinMask();
-                                
-            computerResult = Math.floor(Math.random()*3);
-        }
-
-        rock.onclick = function(){
-            ResultDisplay(1,computerResult);
-            let playerResultString = getResultString(1);
-            let computerResultString = getResultString(computerResult);
-            showMask('haoye','qifei',playerResultString,computerResultString);
-
-            if(computerResult == 0){
-                let box = document.getElementById('box');
-                box.innerHTML = `嘿嘿,拿下一分!继续出拳!`;
-                let winAudio = new Audio('./win.m4a');
-                winAudio.play();
-                computerHP--;
-            }
-            else if(computerResult == 1){
-                let box = document.getElementById('box');
-                box.innerHTML = `看来还是旗鼓相当的对手~继续出拳!`;
-                let drawAudio = new Audio('./draw.m4a');
-                drawAudio.play();
-            }
-            else if(computerResult == 2){
-                let box = document.getElementById('box');
-                box.innerHTML = `啊啊,我的香蕉!我要继续出拳拿回来!`;
-                let loseAudio = new Audio('./lose.m4a');
-                loseAudio.play();
-                playerHP--;
-            }
-
-            printHP(playerHP,computerHP)
-            
-            if(playerHP == 0)
-                showLoseMask();
-            if(computerHP == 0)
-                showWinMask();
-                                
-            computerResult = Math.floor(Math.random()*3);
+            setTimeout(haoyeResult,2500);
+            computerResult = Math.floor(Math.random()*3);              
         }
 
         paper.onclick = function(){
@@ -318,12 +298,7 @@ start.onclick = function(){
             }
 
             printHP(playerHP,computerHP)
-            
-            if(playerHP == 0)
-                showLoseMask();
-            if(computerHP == 0)
-                showWinMask();
-                                
+            setTimeout(haoyeResult,2500);
             computerResult = Math.floor(Math.random()*3);
         }
 
@@ -331,9 +306,258 @@ start.onclick = function(){
     }
 
     qifei.onclick = function(){
+        let chooseQifeiAudio = new Audio('./chooseQifei.m4a');
+        chooseQifeiAudio.play();
         div.innerHTML = `
-        
+        <div style="margin-top: 3vh;display: flex;align-items: center;flex-direction: column;">
+            <div>
+                <img class="icon" src="./haoye.png"/>
+            </div>
+            <div class="mdui-chip mdui-color-blue-300" style="margin: 1vh;">
+                <span style="color:white;" id="computerHpSpan" class="mdui-chip-title"></span>
+            </div>
+            <div class="mdui-chip mdui-color-blue-300" style="margin: 1vh;z-index:1001;">
+                <span style="color:white;z-index:1001;" id="computerResultSpan" class="mdui-chip-title">我要出……</span>
+            </div>
+        </div>
+
+        <div class="mdui-card mdui-color-red-400" style="height: 10vh;width:94vw;margin: auto 3vw;">
+            <div id="box" class="mdui-card-content">请出拳……</div>
+        </div>
+
+        <div style="margin-bottom: 3vh;display: flex;align-items: center;flex-direction: column;">
+
+            <div style="display: flex; flex-direction: row;flex-wrap: no-wrap;margin-top: 3vh;">
+                <div id="scissors" class="mdui-card" style="width:26vw;">
+                    <div class="mdui-card-media">
+                        <img src="./scissors.png"/>
+                        <div class="mdui-card-media-covered">
+                            <div class="mdui-card-primary">
+                                <div class=""mdui-card-primary-subtitle">毒龙剪</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="rock" class="mdui-card" style="width:26vw;">
+                    <div class="mdui-card-media">
+                        <img src="./rock.png"/>
+                        <div class="mdui-card-media-covered">
+                            <div class="mdui-card-primary">
+                                <div class=""mdui-card-primary-subtitle">重拳</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="paper" class="mdui-card" style="width:26vw;">
+                    <div class="mdui-card-media">
+                        <img src="./paper.png"/>
+                        <div class="mdui-card-media-covered">
+                            <div class="mdui-card-primary">
+                                <div class=""mdui-card-primary-subtitle">如来神掌</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mdui-chip mdui-color-pink-300" style="margin: 1vh;z-index:1001;">
+                <span style="color:white;" id="playerResultSpan" class="mdui-chip-title">我要出……</span>
+            </div>
+            <div class="mdui-chip mdui-color-pink-300" style="margin: 1vh;">
+                <span style="color:white;" id="playerHpSpan" class="mdui-chip-title"></span>
+            </div>
+            <div>
+                <img class="icon" src="./qifei.png"/>
+            </div>
+
+        </div>
         `
+        var playerHP = 7;
+        var computerHP = 5;
+        printHP(playerHP,computerHP);
+
+        let computerResult = Math.floor(Math.random()*3);
+        let scissors = document.getElementById('scissors');
+        let rock = document.getElementById('rock');
+        let paper = document.getElementById('paper');
+
+        function qifeiResult(){
+            if(playerHP == 0){
+                let dieAudio = new Audio('./die.m4a');
+                dieAudio.play();
+                showResultMask(`起飞寄了!`,`qifei`);
+            }
+            if(computerHP == 0){
+                let qifeiWinAudio = new Audio('./qifeiWin.m4a');
+                qifeiWinAudio.play();
+                showResultMask(`好耶赢了!恭喜获得好耶画像一张!`,`haoyeImg`);
+            }
+        }
+
+        function toukanBox(){
+            let box = document.getElementById('box');
+            box.innerHTML += `<br/>哎呀,起飞被好耶偷看了!`;
+        }
+
+        scissors.onclick = function(){
+            
+            if(skill_haoye == true){
+                if(computerHP > 1){
+                    let toukanOrNot = Math.floor(Math.random()*4);
+                    if(toukanOrNot == 0){
+                        skill_haoye = false;
+                        computerResult = 1;
+                        let toukanedAudio = new Audio('./toukaned.m4a');
+                        toukanedAudio.play();
+                        setTimeout(toukanBox,1000);
+                    }
+                }
+                else if(computerHP == 1){
+                    skill_haoye = false;
+                    computerResult = 1;
+                    let toukanedAudio = new Audio('./toukaned.m4a');
+                    toukanedAudio.play();
+                    setTimeout(toukanBox,1000);
+                }
+            }
+
+            ResultDisplay(0,computerResult);
+            let playerResultString = getResultString(0);
+            let computerResultString = getResultString(computerResult);
+            showMask('qifei','haoye',playerResultString,computerResultString);
+
+            if(computerResult == 0){
+                let box = document.getElementById('box');
+                box.innerHTML = `看来还是旗鼓相当的对手~继续出拳!`;
+                let drawAudio = new Audio('./draw.m4a');
+                drawAudio.play();
+            }
+            else if(computerResult == 1){
+                let box = document.getElementById('box');
+                box.innerHTML = `啊啊,我的香蕉!我要继续出拳拿回来!`;
+                let loseAudio = new Audio('./lose.m4a');
+                loseAudio.play();
+                playerHP--;
+            }
+            else if(computerResult == 2){
+                let box = document.getElementById('box');
+                box.innerHTML = `嘿嘿,拿下一分!继续出拳!`;
+                let winAudio = new Audio('./win.m4a');
+                winAudio.play();
+                computerHP--;
+            }
+
+            printHP(playerHP,computerHP)
+            setTimeout(qifeiResult,2500);
+            computerResult = Math.floor(Math.random()*3);
+        }
+
+        rock.onclick = function(){
+
+            if(skill_haoye == true){
+                if(computerHP > 1){
+                    let toukanOrNot = Math.floor(Math.random()*4);
+                    if(toukanOrNot == 0){
+                        skill_haoye = false;
+                        computerResult = 2;
+                        let toukanedAudio = new Audio('./toukaned.m4a');
+                        toukanedAudio.play();
+                        setTimeout(toukanBox,1000);
+                    }
+                }
+                else if(computerHP == 1){
+                    skill_haoye = false;
+                    computerResult = 2;
+                    let toukanedAudio = new Audio('./toukaned.m4a');
+                    toukanedAudio.play();
+                    setTimeout(toukanBox,1000);
+                }
+            }
+
+            ResultDisplay(1,computerResult);
+            let playerResultString = getResultString(1);
+            let computerResultString = getResultString(computerResult);
+            showMask('qifei','haoye',playerResultString,computerResultString);
+
+            if(computerResult == 0){
+                let box = document.getElementById('box');
+                box.innerHTML = `嘿嘿,拿下一分!继续出拳!`;
+                let winAudio = new Audio('./win.m4a');
+                winAudio.play();
+                computerHP--;
+            }
+            else if(computerResult == 1){
+                let box = document.getElementById('box');
+                box.innerHTML = `看来还是旗鼓相当的对手~继续出拳!`;
+                let drawAudio = new Audio('./draw.m4a');
+                drawAudio.play();
+            }
+            else if(computerResult == 2){
+                let box = document.getElementById('box');
+                box.innerHTML = `啊啊,我的香蕉!我要继续出拳拿回来!`;
+                let loseAudio = new Audio('./lose.m4a');
+                loseAudio.play();
+                playerHP--;
+            }
+
+            printHP(playerHP,computerHP)
+            setTimeout(qifeiResult,2500);
+            computerResult = Math.floor(Math.random()*3);              
+        }
+
+        paper.onclick = function(){
+
+            if(skill_haoye == true){
+                if(computerHP > 1){
+                    let toukanOrNot = Math.floor(Math.random()*4);
+                    if(toukanOrNot == 0){
+                        skill_haoye = false;
+                        computerResult = 0;
+                        let toukanedAudio = new Audio('./toukaned.m4a');
+                        toukanedAudio.play();
+                        setTimeout(toukanBox,1000);
+                    }
+                }
+                else if(computerHP == 1){
+                    skill_haoye = false;
+                    computerResult = 0;
+                    let toukanedAudio = new Audio('./toukaned.m4a');
+                    toukanedAudio.play();
+                    setTimeout(toukanBox,1000);
+                }
+            }
+            
+            ResultDisplay(2,computerResult);
+            let playerResultString = getResultString(2);
+            let computerResultString = getResultString(computerResult);
+            showMask('qifei','haoye',playerResultString,computerResultString);
+
+            if(computerResult == 0){
+                let box = document.getElementById('box');
+                box.innerHTML = `啊啊,我的香蕉!我要继续出拳拿回来!`;
+                let loseAudio = new Audio('./lose.m4a');
+                loseAudio.play();
+                playerHP--;
+                
+            }
+            else if(computerResult == 1){
+                let box = document.getElementById('box');
+                box.innerHTML = `嘿嘿,拿下一分!继续出拳!`;
+                let winAudio = new Audio('./win.m4a');
+                winAudio.play();
+                computerHP--;
+            }
+            else if(computerResult == 2){
+                let box = document.getElementById('box');
+                box.innerHTML = `看来还是旗鼓相当的对手~继续出拳!`;
+                let drawAudio = new Audio('./draw.m4a');
+                drawAudio.play();
+            }
+
+            printHP(playerHP,computerHP)
+            setTimeout(qifeiResult,2500);
+            computerResult = Math.floor(Math.random()*3);
+        }
         ;
     }
 }
@@ -374,67 +598,3 @@ function printHP(playerHP,computerHP){
     }
 }
 
-function draw(){
-    let box = document.getElementById('box');
-    box.innerHTML = `看来还是旗鼓相当的对手~继续出拳!`;
-    let drawAudio = new Audio('./draw.m4a');
-    drawAudio.play();
-}
-
-function win(computerHP){
-    let box = document.getElementById('box');
-    box.innerHTML = `嘿嘿,拿下一分!继续出拳!`;
-    let winAudio = new Audio('./win.m4a');
-    winAudio.play();
-    computerHP = computerHP--;
-}
-
-function lose(playerHP){
-    let box = document.getElementById('box');
-    box.innerHTML = `啊啊,我的香蕉!我要继续出拳拿回来!`;
-    let loseAudio = new Audio('./lose.m4a');
-    loseAudio.play();
-    playerHP = playerHP--;
-}
-
-function caiquan(player,computer,playerHP,computerHP)
-{
-    if(player == 0){
-        if(computer == 0){
-            let box = document.getElementById('box');
-            box.innerHTML = `看来还是旗鼓相当的对手~继续出拳!`;
-            let drawAudio = new Audio('./draw.m4a');
-            drawAudio.play();
-        }
-        else if(computer == 1){
-            let box = document.getElementById('box');
-            box.innerHTML = `啊啊,我的香蕉!我要继续出拳拿回来!`;
-            let loseAudio = new Audio('./lose.m4a');
-            loseAudio.play();
-            playerHP--;
-        }
-        else if(computer == 2){
-            let box = document.getElementById('box');
-            box.innerHTML = `嘿嘿,拿下一分!继续出拳!`;
-            let winAudio = new Audio('./win.m4a');
-            winAudio.play();
-            computerHP = computerHP--;
-        }
-    }
-    else if(player == 1){
-        if(computer == 0)
-            win(computerHP);
-        else if(computer == 1)
-            draw();
-        else if(computer == 2)
-            lose(playerHP);
-    }
-    else if(player == 2){
-        if(computer == 0)
-            lose(playerHP);
-        else if(computer == 1)
-            win(computerHP);
-        else if(computer == 2)
-            draw();
-    }
-}

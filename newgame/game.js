@@ -229,7 +229,7 @@ start.onclick = function(){
                 box.innerHTML = `坏好耶你已经偷看过一次了!不能再偷看了!`;
                 toukanCounter++;
             }
-            if (toukanCounter >= 1 && toukanCounter <= 5){
+            if (toukanCounter > 1 && toukanCounter <= 5){
                 let toukan5Audio = new Audio('./toukan5.m4a');
                 toukan5Audio.play();
             }

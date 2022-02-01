@@ -1,3 +1,4 @@
+//0:剪刀 1:石头 2:布
 window.onload = $('#mask').hide();
 function showMask(player,computer,playerResultString,computerResultString){
     let mask = document.getElementById('mask');
@@ -175,6 +176,9 @@ start.onclick = function(){
         let rock = document.getElementById('rock');
         let paper = document.getElementById('paper');
         let toukan = document.getElementById('toukan');
+        let qifeiCount = document.getElementById('computerHpSpan')
+        let toukanCounter = 0;
+        let qifeiCounter = 0;
 
         function haoyeResult(){
             if(playerHP == 0){
@@ -189,6 +193,23 @@ start.onclick = function(){
             }
         }
 
+        qifeiCount.onclick = function(){
+            qifeiCounter++;
+            if(computerHP > 1 && qifeiCounter == 10){
+                computerHP--;
+                qifeiCounter = 0;
+                printHP(playerHP,computerHP)
+            }
+            else if(computerHP == 1 && qifeiCounter == 20){
+                computerHP--;
+                qifeiCounter = 0;
+                printHP(playerHP,computerHP)
+                let haoyeWinAudio = new Audio('./haoyeWin.m4a');
+                haoyeWinAudio.play();
+                showResultMask(`恭喜你搓烂了起飞的所有香蕉,他选择投降!恭喜获得起飞画像一张!`,`qifeiImg`);
+            }
+        }
+
         toukan.onclick = function(){
             let box = document.getElementById('box');
             if(skill_haoye == true){
@@ -200,9 +221,21 @@ start.onclick = function(){
                 else if(computerResult == 2)
                     box.innerHTML += `如来神掌!`;
                 skill_haoye = false;
+                toukanCounter++;
+                let toukanAudio = new Audio('./toukan.m4a');
+                toukanAudio.play();
             }
             else if(skill_haoye == false){
                 box.innerHTML = `坏好耶你已经偷看过一次了!不能再偷看了!`;
+                toukanCounter++;
+            }
+            if (toukanCounter >= 1 && toukanCounter <= 5){
+                let toukan5Audio = new Audio('./toukan5.m4a');
+                toukan5Audio.play();
+            }
+            else if (toukanCounter > 5){
+                let toukan5moreAudio = new Audio('./toukan5more.m4a');
+                toukan5moreAudio.play();
             }
         }
         scissors.onclick = function(){
@@ -311,7 +344,7 @@ start.onclick = function(){
         div.innerHTML = `
         <div style="margin-top: 3vh;display: flex;align-items: center;flex-direction: column;">
             <div>
-                <img class="icon" src="./haoye.png"/>
+                <img id="haoyeCount" class="icon" src="./haoye.png"/>
             </div>
             <div class="mdui-chip mdui-color-blue-300" style="margin: 1vh;">
                 <span style="color:white;" id="computerHpSpan" class="mdui-chip-title"></span>
@@ -380,6 +413,19 @@ start.onclick = function(){
         let scissors = document.getElementById('scissors');
         let rock = document.getElementById('rock');
         let paper = document.getElementById('paper');
+        let haoyeCount = document.getElementById('haoyeCount');
+        let haoyeCounter = 0;
+
+        haoyeCount.onclick = function(){
+            haoyeCounter++;
+            if(haoyeCounter == 66){
+                computerHP = 0;
+                printHP(playerHP,computerHP);
+                let qifeiWinAudio = new Audio('./qifeiWin.m4a');
+                qifeiWinAudio.play();
+                showResultMask(`好耶坠机!恭喜你成功俘获了好耶!获得好耶画像一张!`,`haoyeImg`);
+            }
+        }
 
         function qifeiResult(){
             if(playerHP == 0){
@@ -562,11 +608,6 @@ start.onclick = function(){
     }
 }
 
-
-function computerResult(){
-    return Math.floor(Math.random()*3);//0:剪刀 1:石头 2:布
-}
-
 function ResultDisplay(playerResult,computerResult){
     let computerResultSpan = document.getElementById('computerResultSpan');
     let playerResultSpan = document.getElementById('playerResultSpan');
@@ -598,3 +639,41 @@ function printHP(playerHP,computerHP){
     }
 }
 
+let people = document.getElementById('people');
+people.onclick = function(){
+    div.innerHTML = `
+    <ul class="mdui-list" style="margin:auto;background-color: rgba(225,225,225,0.9);width:70vw;">
+        <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">
+                <div class="mdui-list-item-title mdui-list-item-one-line">代码</div>
+                <div class="mdui-list-item-text mdui-list-item-two-line">公鸭</div>
+            </div>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">
+                <div class="mdui-list-item-title mdui-list-item-one-line">美工</div>
+                <div class="mdui-list-item-text mdui-list-item-two-line">滑滑</div>
+            </div>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">
+                <div class="mdui-list-item-title mdui-list-item-one-line">P图</div>
+                <div class="mdui-list-item-text mdui-list-item-two-line">公鸭</div>
+            </div>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">
+                <div class="mdui-list-item-title mdui-list-item-one-line">配音</div>
+                <div class="mdui-list-item-text mdui-list-item-two-line">滑滑</div>
+            </div>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">
+                <div class="mdui-list-item-title mdui-list-item-one-line">文案</div>
+                <div class="mdui-list-item-text mdui-list-item-two-line">滑滑、公鸭</div>
+            </div>
+        </li>
+    </ul>
+    <button onclick="location.reload();" class="mdui-btn mdui-btn-raised mdui-ripple" style="background-color: rgba(225,225,225,0.9);">返回</button>
+    `
+}

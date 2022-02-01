@@ -390,7 +390,7 @@ start.onclick = function(){
             if(computerHP == 0){
                 let qifeiWinAudio = new Audio('./qifeiWin.m4a');
                 qifeiWinAudio.play();
-                showResultMask(`好耶赢了!恭喜获得好耶画像一张!`,`haoyeImg`);
+                showResultMask(`起飞赢了!恭喜获得好耶画像一张!`,`haoyeImg`);
             }
         }
 

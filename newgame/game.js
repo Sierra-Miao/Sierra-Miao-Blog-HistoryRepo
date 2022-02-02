@@ -645,6 +645,12 @@ people.onclick = function(){
     <ul class="mdui-list" style="margin:auto;background-color: rgba(225,225,225,0.9);width:70vw;">
         <li class="mdui-list-item mdui-ripple">
             <div class="mdui-list-item-content">
+                <div class="mdui-list-item-title mdui-list-item-one-line">3A大作</div>
+                <div class="mdui-list-item-text mdui-list-item-two-line">A cheater, a foolish and a monkey.</div>
+            </div>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">
                 <div class="mdui-list-item-title mdui-list-item-one-line">代码</div>
                 <div class="mdui-list-item-text mdui-list-item-two-line">公鸭</div>
             </div>
@@ -673,7 +679,22 @@ people.onclick = function(){
                 <div class="mdui-list-item-text mdui-list-item-two-line">滑滑、公鸭</div>
             </div>
         </li>
+        <li class="mdui-list-item mdui-ripple">
+            <div id="tips" class="mdui-list-item-content">
+                <div class="mdui-list-item-title mdui-list-item-one-line">小提示</div>
+            </div>
+        </li>
     </ul>
     <button onclick="location.reload();" class="mdui-btn mdui-btn-raised mdui-ripple" style="background-color: rgba(225,225,225,0.9);">返回</button>
     `
+    let tipsOpen = false;
+    let tips = document.getElementById('tips');
+    tips.onclick = function(){
+        if(tipsOpen == false){
+            tipsOpen = true;
+            tips.innerHTML += `
+            <div class="mdui-list-item-text mdui-list-item-two-line">好耶的飞机可以被击毁，好耶的香蕉也可以被偷走噢！多次点击有惊喜！</div>
+            `
+        }
+    }
 }

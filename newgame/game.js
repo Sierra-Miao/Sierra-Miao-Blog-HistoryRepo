@@ -93,6 +93,9 @@ start.onclick = function(){
         </div>
     </div>
     `;
+    mdui.snackbar({
+        message: '配音才是灵魂,开启声音体验更佳哦!'
+    });
     var haoye = document.getElementById('haoye');
     var qifei = document.getElementById('qifei');
     var skill_haoye = true;

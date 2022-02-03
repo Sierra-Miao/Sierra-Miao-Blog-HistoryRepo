@@ -696,7 +696,7 @@ people.onclick = function(){
         if(tipsOpen == false){
             tipsOpen = true;
             tips.innerHTML += `
-            <div class="mdui-list-item-text mdui-list-item-two-line">好耶的飞机可以被击毁，好耶的香蕉也可以被偷走噢！多次点击有惊喜！</div>
+            <div class="mdui-list-item-text mdui-list-item-two-line">好耶的飞机可以被击毁，起飞的香蕉也可以被偷走噢！多次点击有惊喜！</div>
             `
         }
     }

@@ -73,8 +73,8 @@ let cardData = [
     }
 ]
 
-let cardMain = document.querySelector('.container');//容器
-let pagination =  document.querySelector('.pagination');//分页容器
+let cardMain = document.getElementById('novel1');//容器
+let pagination =  document.getElementById('pagination');//分页容器
 let pageCount = Math.ceil(cardData.length/12); //根据数据的长度计算总共几页
 let cardDataRender = [];//每页要显示的数据
 let p = 1;//根据p值显示每页的数据
@@ -126,7 +126,7 @@ let changePageClass = ()=>{
     asAll[p-1].classList.add('active');
 };
 //上一页
-let prev = document.querySelector('.prev');
+let prev = document.getElementById('prev1');
 prev.onclick = function (e) {
         if(p<=1){
             console.log(p);
@@ -138,7 +138,7 @@ prev.onclick = function (e) {
         }
 };
 //下一页
-let next = document.querySelector('.next');
+let next = document.getElementById('next1');
 next.onclick = function () {
     if(p>=asAll.length){
         return;

@@ -5,6 +5,12 @@ let cardData1 = [
         date:"2022.2.12",
         content:"“啊，不要！”一声惨叫打破了阴暗小巷里的宁静……"
     },
+    {
+        href:"./dogfood/novel1/1.html",
+        title:"二、走马楼台类转蓬",
+        date:"2022.2.13",
+        content:"“正叟谓，抖万卷苏，兴万里漏。既要行漏，也要读苏。”……"
+    },
 ]
 
 let cardMain1 = document.getElementById('novel2');//容器

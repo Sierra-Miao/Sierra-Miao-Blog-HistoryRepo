@@ -11,6 +11,12 @@ let cardData1 = [
         date:"2022.2.13",
         content:"“正叟谓，抖万卷苏，兴万里漏。既要行漏，也要读苏。”……"
     },
+    {
+        href:"./dogfood/novel1/2.html",
+        title:"三、午夜龙府",
+        date:"2022.2.14",
+        content:"“摸了一遍尸体，发现三块玉，一本奇怪的册子，一个钱包，包里有四根金条，不少碎金银……"
+    },
 ]
 
 let cardMain1 = document.getElementById('novel2');//容器
